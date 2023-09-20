@@ -1,117 +1,157 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { useCountdown } from '../hooks/CountdownTimer';
+import dynamic from 'next/dynamic';
+import HeartIcon from '@mui/icons-material/Favorite';
 
 const inter = Inter({ subsets: ['latin'] })
 
+// const Countdown = dynamic(() => import('../hooks/CountdownTimer'), {ssr: false})
+
 export default function Home() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    setTime("Nov 19, 2023 13:00:00");
+  }, [])
+  const [days, hours, minutes, seconds] = useCountdown(time);
+
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex flex-col p-2 ${inter.className} bg-white`}
     >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div>
+        {/* head section */}
+        <div className="bg-header2 bg-center bg-no-repeat bg-cover h-[26rem]">
+          <div className="flex flex-row justify-between font-semibold">
+            <h1 className="font-bold"> Our Wedding </h1>
+            <div className="space-x-4 hover:shadow-lg max-w-6xl">
+              <button className='hover:bg-pink-light hover:text-pink-primary'> HOME</button>
+              <button className='hover:bg-pink-light hover:text-pink-primary'>STORY</button>
+              <button className='hover:bg-pink-light hover:text-pink-primary'>GALLERY</button>
+              <button className='hover:bg-pink-light hover:text-pink-primary'>CONTACT</button>
+            </div>
+          </div>
+
+          <div className='text-center mt-16'>
+            <h3 className='text-4xl text-pink-primary font-bold'> DIAN & NADIAH </h3>
+            <p>We Are Getting Maried</p>
+            <div className='text-center flex flex-column justify-center my-4'>
+              <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{days ? days : 0} <br /> Days</p>
+              <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{hours ? hours : 0} <br /> Hours</p>
+              <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{minutes ? minutes : 0} <br /> Minutes</p>
+              <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{seconds ? seconds : 0} <br /> Seconds</p>
+            </div>
+            <div className='items-center bg-white text-pink-primary rounded-full w-40 py-1 m-auto text-center'>SAVE THE DATE</div>
+          </div>
         </div>
-      </div>
+        {/* profile section */}
+        <div className='my-8'>
+          <div className='text-center'>
+            <h1 className='text-pink-primary mb-4'>Hello!</h1>
+            <p className='text-black'>November 19th 2023, Sumbersekar, Dau </p>
+            <label className='text-grey'>We invited you to celebrate our wedding</label>
+          </div>
+          <div className='flex flex-row space-x-2 justify-center mt-8'>
+            <div className="flex flex-row space-x-2">
+              <section>
+                <h2 className='text-pink-primary'>Alfa Riskika Dian Asmara</h2>
+                <p className='text-grey'>The Son of Mr. Suwardi & Mrs. Emik Setyowati</p>
+              </section>
+              <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
+                <Image alt='pic1'
+                  src="/groom3.jpg"
+                  // objectFit='cover'
+                  width="120"
+                  height="120" />
+              </div>
+            </div>
+            {/* heart icon */}
+            <div className="animate-pulseNoTrans bg-pink-light p-3 rounded-full relative top-10 left-0 right-0 z-99 h-[42.5px] text-center"><HeartIcon sx={{ color: '#f266ab' }} />
+            </div>
+            {/* bride */}
+            <div className="flex flex-row space-x-2">
+              <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
+                <Image
+                  alt='pic2'
+                  src="/bride5.jpg"
+                  // objectFit='cover'
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <section>
+                <h2 className='text-pink-primary'>Nadiah Nahdah Anisah</h2>
+                <p className='text-grey'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
+              </section>
+            </div>
+          </div>
+        </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {/* event details */}
+        <div className="bg-header2 text-center p-6 h-[30rem] bg-cover bg-center">
+          <div>
+            <h4 className='font-bold'>Our Special Events</h4>
+            <h1 className='text-3xl font-bold'>Wedding Events</h1>
+            <div className="flex flex-row mt-10 mx-8 space-x-44">
+              {/* table1 */}
+              <table className='border'>
+                <tbody>
+                  <tr>
+                    <th className='font-bold border'>AKAD</th>
+                  </tr>
+                  <tr>
+                    <td className='py-4'>19 November 2023, 08.00 AM - Done</td>
+                  </tr>
+                  <tr>
+                    <td className='py-4 pb-6'>
+                      Omah Sinten <br />
+                      Jl. Apel Raya no. 100 RT 4 RW 1, Ds Semanding, Kel. Sumbersekar, Kec. Dau</td>
+                  </tr>
+                </tbody>
+              </table>
+              {/* table2 */}
+              <table className='border'>
+                <tbody>
+                  <tr>
+                    <th className='font-bold border'>WEDDING RECEPTION</th>
+                  </tr>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                  <tr>
+                    <td className='py-4'>19 November 2023, 13.00 AM - 16.00</td>
+                  </tr>
+                  <tr>
+                    <td className='py-4 pb-6'>Omah Sinten <br />
+                      Jl. Apel Raya no. 100 RT 4 RW 1, Ds Semanding, Kel. Sumbersekar, Kec. Dau</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          </div>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+        {/* our story */}
+        <div className='mt-8 text-grey text-center'>
+          <h1 className='text-3xl font-bold text-pink-primary'>Our Story</h1>
+          <p>First Meet</p>
+          <p>First Date</p>
+          <p>In A Relationship</p>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        {/* gallery */}
+        <div className='mt-8 text-grey text-center'>
+          <h1 className='text-3xl font-bold text-pink-primary'>Our Memories</h1>
+          <div className='justify-center space-x-2'>
+            <Image alt='pic3' src="/memories1.jpg" className="" width="750" height="750" /> <br />
+            <Image alt='pic4' src="/bride.jpg" className="" width="50" height="50" />
+            <Image alt='pic5' src="/dian.jpg" className="" width="50" height="50" />
+            <Image alt='pic6' src="/bride.jpg" className="" width="50" height="50" />
+          </div>
+        </div>
+
+
       </div>
     </main>
   )
