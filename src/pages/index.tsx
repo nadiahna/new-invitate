@@ -23,7 +23,7 @@ export default function Home() {
     >
       <div>
         {/* head section */}
-        <div className="bg-header2 bg-center bg-no-repeat bg-cover h-[26rem]">
+        <div className="bg-header2 bg-center bg-no-repeat bg-cover h-[35rem]">
           <div className="flex flex-row justify-between font-semibold">
             <h1 className="font-bold"> Our Wedding </h1>
             <div className="space-x-4 hover:shadow-lg max-w-6xl">
@@ -90,39 +90,39 @@ export default function Home() {
         </div>
 
         {/* event details */}
-        <div className="bg-header2 text-center p-6 h-[30rem] bg-cover bg-center">
+        <div className="bg-header2 text-center p-6 h-[45rem] bg-cover bg-center">
           <div>
-            <h4 className='font-bold'>Our Special Events</h4>
-            <h1 className='text-3xl font-bold'>Wedding Events</h1>
-            <div className="flex flex-row mt-10 mx-8 space-x-44">
+            <h4 className='font-bold mt-6'>Our Special Events</h4>
+            <h1 className='text-3xl font-bold my-8'>Wedding Events</h1>
+            <div className="flex flex-row mt-10 justify-center items-center space-x-48">
               {/* table1 */}
-              <table className='border'>
+              <table className='border font-bold '>
                 <tbody>
                   <tr>
-                    <th className='font-bold border'>AKAD</th>
+                    <th className='border'>AKAD</th>
                   </tr>
                   <tr>
                     <td className='py-4'>19 November 2023, 08.00 AM - Done</td>
                   </tr>
                   <tr>
-                    <td className='py-4 pb-6'>
+                    <td className='p-4 pb-6'>
                       Omah Sinten <br />
                       Jl. Apel Raya no. 100 RT 4 RW 1, Ds Semanding, Kel. Sumbersekar, Kec. Dau</td>
                   </tr>
                 </tbody>
               </table>
               {/* table2 */}
-              <table className='border'>
+              <table className='border font-bold'>
                 <tbody>
                   <tr>
-                    <th className='font-bold border'>WEDDING RECEPTION</th>
+                    <th className='border'>WEDDING RECEPTION</th>
                   </tr>
 
                   <tr>
                     <td className='py-4'>19 November 2023, 13.00 AM - 16.00</td>
                   </tr>
                   <tr>
-                    <td className='py-4 pb-6'>Omah Sinten <br />
+                    <td className='p-4 pb-6'>Omah Sinten <br />
                       Jl. Apel Raya no. 100 RT 4 RW 1, Ds Semanding, Kel. Sumbersekar, Kec. Dau</td>
                   </tr>
                 </tbody>
