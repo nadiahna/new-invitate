@@ -18,6 +18,9 @@ module.exports = {
 
     },
     extend: {
+      fontFamily: {
+        sacramento: ['var(--font-sacramento)'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
