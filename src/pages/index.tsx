@@ -63,7 +63,7 @@ export default function Home() {
               </section>
               <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
                 <Image alt='pic1'
-                  src="/groom3.jpg"
+                  src="/groom3.JPG"
                   // objectFit='cover'
                   width="120"
                   height="120" />
