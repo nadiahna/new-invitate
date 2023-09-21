@@ -35,10 +35,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='text-center mt-24'>
+            <div className='text-center mt-20'>
               <h3 className='text-8xl text-pink-primary font-medium font-sacramento'> Dian & Nadiah </h3>
-              <p>We Are Getting Maried</p>
-              <div className='text-center flex flex-column justify-center my-4'>
+              <p className='text-xl'>We Are Getting Maried</p>
+              <div className='text-center flex flex-column justify-center my-10'>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{days ? days : 0} <br /> Days</p>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{hours ? hours : 0} <br /> Hours</p>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{minutes ? minutes : 0} <br /> Minutes</p>
@@ -49,17 +49,17 @@ export default function Home() {
           </div>
         </div>
         {/* profile section */}
-        <div className='my-8'>
-          <div className='text-center'>
-            <h1 className='text-pink-primary mb-4 font-sacramento text-5xl font-medium'>Hello!</h1>
-            <p className='text-black'>November 19th 2023, Sumbersekar, Dau </p>
-            <label className='text-grey'>We invited you to celebrate our wedding</label>
+        <div className='my-36'>
+          <div className='text-center py-6'>
+            <h1 className='text-pink-primary mb-4 font-sacramento text-6xl font-medium'>Hello!</h1>
+            <p className='text-black text-xl'>November 19th 2023, Sumbersekar, Dau </p>
+            <label className='text-grey text-xl'>We invited you to celebrate our wedding</label>
           </div>
           <div className='flex flex-row space-x-2 justify-center mt-8'>
             <div className="flex flex-row space-x-2">
               <section>
                 <h2 className='text-pink-primary font-sacramento text-5xl'>Alfa Riskika Dian Asmara</h2>
-                <p className='text-grey'>The Son of Mr. Suwardi & Mrs. Emik Setyowati</p>
+                <p className='text-grey text-xl'>The Son of Mr. Suwardi & Mrs. Emik Setyowati</p>
               </section>
               <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
                 <Image alt='pic1'
@@ -85,14 +85,14 @@ export default function Home() {
               </div>
               <section>
                 <h2 className='text-pink-primary font-sacramento text-5xl'>Nadiah Nahdah Anisah</h2>
-                <p className='text-grey'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
+                <p className='text-grey text-xl'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
               </section>
             </div>
           </div>
         </div>
 
         {/* event details */}
-        <div className="bg-header2 text-center h-[45rem] bg-cover bg-center text-pink-light">
+        <div className="bg-header2 text-center h-[45rem] bg-cover bg-center text-pink-light my-40">
           <div className='backdrop-brightness-50 w-full h-full'>
             <h4 className='font-bold pt-12'>Our Special Events</h4>
             <h1 className='font-sacramento text-5xl font-semibold py-8'>Wedding Events</h1>
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
 
         {/* our story */}
-        <div className='mt-8 text-grey text-center'>
+        <div className='my-32 text-grey text-center'>
           <h1 className='text-6xl font-sacramento font-semibold text-pink-primary'>Our Story</h1>
           <p>First Meet</p>
           <p>First Date</p>
@@ -146,7 +146,7 @@ export default function Home() {
 
         {/* gallery */}
         <div className='mt-8 text-grey text-center'>
-          <h1 className='text-6xl font-sacramento font-semibold text-pink-primary'>Our Memories</h1>
+          <h1 className='text-6xl font-sacramento font-semibold text-pink-primary my-12'>Our Memories</h1>
           <div className='grid grid-cols-3 justify-center gap-2'>
             <Image alt='pic3' src="/memories1.jpg" className="" width="720" height="720" />
             <Image alt='pic4' src="/memories2.jpg" className="" width="720" height="720" />
