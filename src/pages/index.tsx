@@ -36,7 +36,7 @@ export default function Home() {
             </div>
 
             <div className='text-center mt-20'>
-              <h3 className='text-8xl text-pink-primary font-medium font-sacramento'> Dian & Nadiah </h3>
+              <h3 className='text-8xl text-pink-primary font-medium font-sacramento'> Nadiah & Dian </h3>
               <p className='text-xl'>We Are Getting Maried</p>
               <div className='text-center flex flex-column justify-center my-10'>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{days ? days : 0} <br /> Days</p>
@@ -58,12 +58,12 @@ export default function Home() {
           <div className='flex flex-row space-x-2 justify-center mt-8'>
             <div className="flex flex-row space-x-2">
               <section>
-                <h2 className='text-pink-primary font-sacramento text-5xl'>Alfa Riskika Dian Asmara</h2>
-                <p className='text-grey text-xl'>The Son of Mr. Suwardi & Mrs. Emik Setyowati</p>
+                <h2 className='text-pink-primary font-sacramento text-5xl'>Nadiah Nahdah Anisah</h2>
+                <p className='text-grey text-xl'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
               </section>
               <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
                 <Image alt='pic1'
-                  src="/groom3.JPG"
+                  src="/bride5.jpg"
                   // objectFit='cover'
                   width="120"
                   height="120" />
@@ -77,15 +77,15 @@ export default function Home() {
               <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full">
                 <Image
                   alt='pic2'
-                  src="/bride5.jpg"
+                  src="/groom3.JPG"
                   // objectFit='cover'
                   width="120"
                   height="120"
                 />
               </div>
               <section>
-                <h2 className='text-pink-primary font-sacramento text-5xl'>Nadiah Nahdah Anisah</h2>
-                <p className='text-grey text-xl'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
+                <h2 className='text-pink-primary font-sacramento text-5xl'>Alfa Riskika Dian Asmara</h2>
+                <p className='text-grey text-xl'>The Son of Mr. Suwardi & Mrs. Emik Setyowati</p>
               </section>
             </div>
           </div>

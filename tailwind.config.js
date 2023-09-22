@@ -14,7 +14,7 @@ module.exports = {
       'grey' : '#404040',
       'pink-light': '#f1d4e5',
       'pink-primary' : '#f266ab',
-      'salmon' : '#f2d8d8'
+      'salmon' : '#F9F5F6'
 
     },
     extend: {
