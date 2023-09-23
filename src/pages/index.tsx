@@ -23,12 +23,12 @@ export default function Home() {
     >
       <div>
         {/* head section */}
-        <div className="w-full bg-header2 bg-center bg-no-repeat bg-cover h-[45rem]">
-          <div className="backdrop-blur-sm w-full h-full">
+        <div className="w-full bg-bg-header bg-center bg-no-repeat bg-cover min-h-screen">
+          <div className="backdrop-blur-sm w-100 h-screen">
             <div className="flex flex-row justify-between font-semibold backdrop-blur-lg">
               <h1 className="font-medium font-sacramento text-4xl p-2">Wedding </h1>
-              <div className="space-x-4 hover:shadow-lg max-w-6xl">
-                <button className='hover:bg-pink-light hover:text-pink-primary'> HOME</button>
+              <div className="space-x-4 max-w-6xl">
+                <button className='hover:bg-pink-light hover:p-1 hover:text-pink-primary'> HOME</button>
                 <button className='hover:bg-pink-light hover:text-pink-primary'>STORY</button>
                 <button className='hover:bg-pink-light hover:text-pink-primary'>GALLERY</button>
                 <button className='hover:bg-pink-light hover:text-pink-primary'>CONTACT</button>
@@ -36,15 +36,19 @@ export default function Home() {
             </div>
 
             <div className='text-center mt-20'>
+              <p className='text-2xl mb-8 font-medium'>We Are Getting Maried</p>
               <h3 className='text-8xl text-pink-primary font-medium font-sacramento'> Nadiah & Dian </h3>
-              <p className='text-xl'>We Are Getting Maried</p>
-              <div className='text-center flex flex-column justify-center my-10'>
+              <div className='text-center flex flex-column justify-center my-8'>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{days ? days : 0} <br /> Days</p>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{hours ? hours : 0} <br /> Hours</p>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{minutes ? minutes : 0} <br /> Minutes</p>
                 <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{seconds ? seconds : 0} <br /> Seconds</p>
               </div>
-              <div className='items-center bg-white text-pink-primary rounded-full w-40 py-1 m-auto text-center'>SAVE THE DATE</div>
+              <div className='m-12 text-xl'>
+                <p>Dear</p>
+                <label className='font-bold'>Guest Name</label>
+              </div>
+              <button className='items-center bg-white text-pink-primary rounded-full w-48 py-1 m-auto text-center text-xl'>Open Invitation</button>
             </div>
           </div>
         </div>

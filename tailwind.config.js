@@ -25,7 +25,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'bg-header': 'url("/bgheader.jpg")',
+        'bg-header': 'url("/bgheader4.jpg")',
         'header2': 'url("/bgheader3.jpg")',
       },
       animation: {
