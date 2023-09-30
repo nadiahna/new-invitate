@@ -4,18 +4,44 @@ import { Inter } from 'next/font/google'
 import { useCountdown } from '../hooks/CountdownTimer';
 import dynamic from 'next/dynamic';
 import HeartIcon from '@mui/icons-material/Favorite';
+import { DiscussionEmbed } from "disqus-react"
+
+type Post = {
+  id: string;
+  title: string;
+};
+
+interface DisqusCommentsProps {
+  post: Post;
+}
+
+// const DisqusComments = ({ post }: DisqusCommentsProps) => {
+//   const disqusShortname = "nadian-wedding"
+//   const disqusConfig = {
+//     url: "https://nadian-wedding.disqus.com/embed.js",
+//     identifier: post.id, // Single post id
+//     title: post.title // Single post title
+//   }
+// }
 
 const inter = Inter({ subsets: ['latin'] })
 
 // const Countdown = dynamic(() => import('../hooks/CountdownTimer'), {ssr: false})
 
-export default function Home() {
+export default function Home({ post }: DisqusCommentsProps) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
     setTime("Nov 19, 2023 13:00:00");
   }, [])
   const [days, hours, minutes, seconds] = useCountdown(time);
+
+  const disqusShortname = "nadian-wedding"
+  const disqusConfig = {
+    url: "https://nadian-wedding.disqus.com/embed.js",
+    // identifier: post.id, // Single post id
+    // title: "Nadiah & Dian Wedding" // Single post title
+  }
 
   return (
     <main
@@ -161,6 +187,13 @@ export default function Home() {
           </div>
         </div>
 
+        {/* disqus */}
+        <div>
+          <DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </div>
 
       </div>
     </main>
