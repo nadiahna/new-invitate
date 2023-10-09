@@ -64,11 +64,11 @@ export default function Home({ post }: DisqusCommentsProps) {
             <div className='text-center mt-20'>
               <p className='text-2xl mb-8 font-medium'>We Are Getting Maried</p>
               <h3 className='text-8xl text-pink-primary font-medium font-sacramento'> Nadiah & Dian </h3>
-              <div className='text-center flex flex-column justify-center my-8'>
-                <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{days ? days : 0} <br /> Days</p>
-                <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{hours ? hours : 0} <br /> Hours</p>
-                <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{minutes ? minutes : 0} <br /> Minutes</p>
-                <p className='animate-pulseNoTrans m-2 p-6 w-[100px] h-[100px] text-lg bg-pink-primary rounded-full'>{seconds ? seconds : 0} <br /> Seconds</p>
+              <div className='simply-countdown'>
+                <p className='animate-pulseNoTrans simply-section'>{days ? days : 0} <br /> Days</p>
+                <p className='animate-pulseNoTrans simply-section'>{hours ? hours : 0} <br /> Hours</p>
+                <p className='animate-pulseNoTrans simply-section'>{minutes ? minutes : 0} <br /> Minutes</p>
+                <p className='animate-pulseNoTrans simply-section'>{seconds ? seconds : 0} <br /> Seconds</p>
               </div>
               <div className='m-12 text-xl'>
                 <p>Dear</p>
@@ -79,14 +79,14 @@ export default function Home({ post }: DisqusCommentsProps) {
           </div>
         </div>
         {/* profile section */}
-        <div className='my-36'>
+        <div className='w-full my-36'>
           <div className='text-center py-6'>
             <h1 className='text-pink-primary mb-4 font-sacramento text-6xl font-medium'>Hello!</h1>
             <p className='text-black text-xl'>November 19th 2023, Sumbersekar, Dau </p>
             <label className='text-grey text-xl'>We invited you to celebrate our wedding</label>
           </div>
-          <div className='flex flex-row space-x-2 justify-center mt-8'>
-            <div className="flex flex-row space-x-2">
+          <div className='profile-section space-x-2'>
+            <div className="flex flex-row space-x-2 pb-6">
               <section>
                 <h2 className='text-pink-primary font-sacramento text-5xl'>Nadiah Nahdah Anisah</h2>
                 <p className='text-grey text-xl'>The Daughter of Mr. Hanafi & Mrs. Etik Susilowati</p>
@@ -100,7 +100,7 @@ export default function Home({ post }: DisqusCommentsProps) {
               </div>
             </div>
             {/* heart icon */}
-            <div className="animate-pulseNoTrans bg-pink-light p-3 rounded-full relative top-10 left-0 right-0 z-99 h-[42.5px] text-center"><HeartIcon sx={{ color: '#f266ab' }} />
+            <div className="animate-pulseNoTrans bg-pink-light p-3 heart"><HeartIcon sx={{ color: '#f266ab' }} />
             </div>
             {/* bride */}
             <div className="flex flex-row space-x-2">
@@ -126,9 +126,9 @@ export default function Home({ post }: DisqusCommentsProps) {
           <div className='backdrop-brightness-50 w-full h-full'>
             <h4 className='font-bold pt-12'>Our Special Events</h4>
             <h1 className='font-sacramento text-5xl font-semibold py-8'>Wedding Events</h1>
-            <div className="flex flex-row mt-16 justify-center items-center space-x-48">
+            <div className="eventDetails mt-16 sm:space-x-48">
               {/* table1 */}
-              <table className='border'>
+              <table className='border mb-4'>
                 <tbody>
                   <tr>
                     <th className='border font-bold'>AKAD</th>
@@ -145,7 +145,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                 </tbody>
               </table>
               {/* table2 */}
-              <table className='border'>
+              <table className='border mb-4'>
                 <tbody>
                   <tr>
                     <th className='border font-bold'>WEDDING RECEPTION</th>
@@ -175,7 +175,7 @@ export default function Home({ post }: DisqusCommentsProps) {
         </div>
 
         {/* gallery */}
-        <div className='mt-8 text-grey text-center'>
+        <div className='my-8 text-grey text-center'>
           <h1 className='text-6xl font-sacramento font-semibold text-pink-primary my-12'>Our Memories</h1>
           <div className='grid grid-cols-3 justify-center gap-2'>
             <Image alt='pic3' src="/memories1.jpg" className="" width="720" height="720" />

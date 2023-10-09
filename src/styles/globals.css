@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +25,195 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.simply-countdown {
+  display: flex;
+  flex-direction: row;
+  text-align: center !important;
+  justify-content: center;
+  margin: 0 32px;
+}
+
+.simply-section {
+  margin: 8px;
+  padding: 24px;
+  width: 100px;
+  height: 100px;
+  font-size: 1.125rem;
+  background-color: #f266ab;
+  border-radius: 50%;
+  animation: ease-in-out 2s infinite;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.heart {
+  border-radius: 50%;
+  position: relative;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  transform: translateX(-50%) translateY(65px);
+  text-align: center;
+  height: 42.5px;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Query */
+/* Extra large */
+@media (max-width: 1200px) {
+  .heart {
+    transform: translateX(-50%) translateY(45px);
+  }
+}
+
+/* laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 24px;
+  }
+
+  .heart {
+    top: 3.5rem;
+    height: 32.5px;
+    transform: translateX(-50%) translateY(45px);
+  }
+
+  .timeline::before {
+    left: 60px;
+  }
+
+  .timeline li .timeline-image {
+    left: 15px;
+    margin-left: 45px;
+    top: 16px;
+  }
+
+  .timeline li .timeline-panel {
+    width: calc((100% - 200px));
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 30px;
+    margin: 5px;
+  }
+
+  .heart {
+    top:5rem;
+    height: 27.5px;
+    transform: translateX(-50%) translateY(75px);
+  }
+
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+
+  .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 20px;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+  }
+
+  .heart{
+    display: none;
+    /* top: 5rem; */
+    /* bottom: 5rem; */
+    /* height: 25px;
+    width: 25px !important;
+    margin: auto !important; */
+
+  }
+
+  .eventDetails {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .timeline li .timeline-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 65%;
+    transform: translateX(-20px);
+  }
+
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+
+  .timeline li .timeline-panel::after {
+    top: 31px;
+  }
 }
