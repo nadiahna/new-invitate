@@ -65,6 +65,9 @@ body {
   height: 42.5px;
 }
 
+.eventDetailsWrapper {
+  height: 45rem;
+}
 .eventDetails {
   display: flex;
   flex-direction: row;
@@ -170,14 +173,14 @@ body {
 /* mobile phone */
 @media (max-width: 576px) {
   html {
-    font-size: 60%;
+    font-size: 57%;
   }
 
   .simply-countdown > .simply-section {
-    padding: 20px;
+    padding: 18px;
     margin: 2px;
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
   }
 
   .profile-section {
@@ -192,6 +195,10 @@ body {
     width: 25px !important;
     margin: auto !important; */
 
+  }
+
+  .eventDetailsWrapper {
+    height: 55rem;
   }
 
   .eventDetails {
