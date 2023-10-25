@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useCountdown } from '../hooks/CountdownTimer';
@@ -6,7 +7,6 @@ import dynamic from 'next/dynamic';
 import HeartIcon from '@mui/icons-material/Favorite';
 import { DiscussionEmbed } from "disqus-react"
 import Link from 'next/link';
-import Maps from '@/components/Maps';
 
 type Post = {
   id: string;
@@ -23,21 +23,17 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home({ post }: DisqusCommentsProps) {
   const [time, setTime] = useState("");
   const [copyIsSuccess, setCopyIsSuccess] = useState('');
+  const [guestName, setGuestName] = useState('');
   const bcaRef = useRef(null);
   const bcaNumber = '3850612683';
   const mandiriNumber = '1440023673277';
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const nama = urlParams.get('n') || '';
-  // const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-  // const namaContainer = document.documentElement('.hero h4 span');
-  // namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
-  // document.documentElement('#nama').value = nama;
-
-
+  const { asPath } = useRouter();
+  const name = asPath.split('/').pop();
 
   useEffect(() => {
     setTime("Nov 19, 2023 13:00:00");
     disableScroll();
+    setGuestName(String(name));
   }, [])
   const [days, hours, minutes, seconds] = useCountdown(time);
 
@@ -74,17 +70,17 @@ export default function Home({ post }: DisqusCommentsProps) {
       await navigator.clipboard.writeText(copyMe);
       alert('Copied to clipboard!');
       // setCopyIsSuccess('Tersalin!');
-      setTimeout(() => {
-        setCopyIsSuccess('');
-      }
-        , 3000);
+      // setTimeout(() => {
+      //   setCopyIsSuccess('');
+      // }
+      //   , 3000);
     } catch (err) {
       alert('Failed to copy!');
       // setCopyIsSuccess('Gagal disalin!');
-      setTimeout(() => {
-        setCopyIsSuccess('');
-      }
-        , 3000);
+      // setTimeout(() => {
+      //   setCopyIsSuccess('');
+      // }
+      //   , 3000);
     }
   };
 
@@ -116,8 +112,8 @@ export default function Home({ post }: DisqusCommentsProps) {
                 <p className='animate-pulseNoTrans simply-section'>{seconds ? seconds : 0} <br /> Detik</p>
               </div>
               <div className='m-12 text-xl'>
-                <p>Dear</p>
-                <label className='font-bold'>Guest Name</label>
+                <p>Kepada <span>Bapak/Ibu/Saudara/i, </span></p>
+                <label className='font-bold'>{guestName === '#profile' ? 'Tamu Undangan' : guestName}</label>
               </div>
               <Link href='#profile' scroll={false}>
                 <button className='items-center bg-white text-pink-primary rounded-full w-48 py-1 m-auto text-center text-xl' onClick={enableScroll}>Buka Undangan</button>
