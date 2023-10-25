@@ -28,7 +28,9 @@ export default function Home({ post }: DisqusCommentsProps) {
   const bcaNumber = '3850612683';
   const mandiriNumber = '1440023673277';
   const { asPath } = useRouter();
-  const name = asPath.split('/').pop();
+  const getName = asPath.split('/').pop();
+  const name = getName?.replace(/([a-z])([A-Z])/g, '$1 $2');
+
 
   useEffect(() => {
     setTime("Nov 19, 2023 13:00:00");
