@@ -7,6 +7,10 @@ import dynamic from 'next/dynamic';
 import HeartIcon from '@mui/icons-material/Favorite';
 import { DiscussionEmbed } from "disqus-react"
 import Link from 'next/link';
+import Maps from '@/components/Maps';
+import AudioPlayer from "./components/AudioPlayer";
+import { MusicNote, MusicNoteOutlined, MusicNoteSharp, MusicNoteTwoTone } from '@mui/icons-material';
+// import PauseCircleOutlineTwoToneIcon from '@mui/icons-material/PauseCircleOutlineTwoTone';
 
 type Post = {
   id: string;
@@ -17,10 +21,29 @@ interface DisqusCommentsProps {
   post: Post;
 }
 
+// const DisqusComments = ({ post }: DisqusCommentsProps) => {
+//   const disqusShortname = "nadian-wedding"
+//   const disqusConfig = {
+//     url: "https://nadian-wedding.disqus.com/embed.js",
+//     identifier: post.id, // Single post id
+//     title: post.title // Single post title
+//   }
+// }
+
+  // const HomePage = ()=> {
+  //   return (
+  //     <div>
+  //       <AudioPlayer/>
+  //     </div>
+  //   );
+  // };
+
+    // export default HomePage;
+
 const inter = Inter({ subsets: ['latin'] })
 
 
-export default function Home({ post }: DisqusCommentsProps) {
+export default function Home({ post }: DisqusCommentsProps)  {
   const [time, setTime] = useState("");
   const [copyIsSuccess, setCopyIsSuccess] = useState('');
   const [guestName, setGuestName] = useState('');
@@ -45,6 +68,7 @@ export default function Home({ post }: DisqusCommentsProps) {
     // identifier: post.id, // Single post id
     // title: "Nadiah & Dian Wedding" // Single post title
   }
+    
 
   const disableScroll = () => {
     const scrollTop = window.screenY || document.documentElement.scrollTop;
@@ -87,9 +111,13 @@ export default function Home({ post }: DisqusCommentsProps) {
   };
 
   return (
+    <div>
+
+  
     <main
       className={`flex flex-col p-2 ${inter.className} bg-white`}
     >
+      
       <div>
         {/* head section */}
         <div id='Home' className="w-full bg-bg-header bg-center bg-no-repeat bg-cover min-h-screen">
@@ -174,7 +202,8 @@ export default function Home({ post }: DisqusCommentsProps) {
             <h1 className='font-sacramento text-5xl py-8'>Acara Pernikahan</h1>
             <div className="eventDetails mt-20 sm:space-x-48">
               {/* table1 */}
-              <table className='border mb-4'>
+              
+              <table className='border'>
                 <tbody>
                   <tr>
                     <th className='border font-bold'>AKAD</th>
@@ -190,6 +219,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                   </tr>
                 </tbody>
               </table>
+              
               {/* table2 */}
               <table className='border mb-4'>
                 <tbody>
@@ -278,8 +308,13 @@ export default function Home({ post }: DisqusCommentsProps) {
             config={disqusConfig}
           />
         </div>
+   <div>         
+      <AudioPlayer audioSrc="./LAGU.mp3" />
+   </div>
+   
 
       </div>
     </main>
+    </div>
   )
 }
