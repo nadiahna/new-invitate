@@ -36,8 +36,9 @@ module.exports = {
       },
       animation: {
         pulseNoTrans: 'pulseNoTrans 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        fadeIn : 'fadeIn 2s ease-in infinite',
-        fadeOut : 'fadeOut 2s ease-out infinite',
+        fadeIn : 'fadeIn 2s ease-in',
+        fadeOut : 'fadeOut 2s ease-out',
+        spins : 'spin 1s linear infinite',
       },
       keyframes: {
         fadeOut: {
@@ -52,6 +53,10 @@ module.exports = {
           '0%' : {transform: 'scale(1)'},
           '50%' : {transform: 'scale(1.05)'},
           '100%' : {transform: 'scale(1)'},
+        },
+        spins : {
+          '0%' : {transform: 'rotate(0deg)'},
+          '100%' : {transform: 'rotate(360deg)'},
         }
       },
     },
