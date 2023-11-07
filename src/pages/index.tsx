@@ -169,7 +169,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                     <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full animate-fadeIn">
                       <Image
                         alt='pic2'
-                        src="/groom3.JPG"
+                        src="/groom3.jpg"
                         // objectFit='cover'
                         width="120"
                         height="120"
@@ -201,7 +201,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                           <th className='border font-bold'>AKAD</th>
                         </tr>
                         <tr>
-                          <td className='py-4'>19 November 2023, 09.00 AM - Done</td>
+                          <td className='py-4'>19 November 2023, 09.00 WIB - Done</td>
                         </tr>
                         <tr>
                           <td className='p-6 pb-6'>
@@ -220,7 +220,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                         </tr>
 
                         <tr>
-                          <td className='py-4'>19 November 2023, 13.00 AM - 16.00</td>
+                          <td className='py-4'>19 November 2023, 13.00 WIB - 16.00 WIB</td>
                         </tr>
                         <tr>
                           <td className='p-6 pb-6'>Omah Sinten <br />
