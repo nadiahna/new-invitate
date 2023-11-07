@@ -32,7 +32,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'bg-header': 'url("/bgheader4.jpg")',
-        'header2': 'url("/IMG_6275.jpg")',
+        'header2': 'url("/IMG_6275.JPG")',
       },
       animation: {
         pulseNoTrans: 'pulseNoTrans 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
