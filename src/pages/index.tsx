@@ -169,7 +169,7 @@ export default function Home({ post }: DisqusCommentsProps) {
                     <div style={{ overflow: 'hidden', width: '120px', height: '120px' }} className="rounded-full animate-fadeIn">
                       <Image
                         alt='pic2'
-                        src="/groom3.jpg"
+                        src="/groom3.JPG"
                         // objectFit='cover'
                         width="120"
                         height="120"
